@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Lets Go Summer Camp",
+        "category": "Multi-Activity Camps",
+        "image": "letsgo.png"
+    },
+    {
+        "name": "FAI Soccer Summer Schools",
+        "category": "Sports Camps",
+        "image": "fai_soccer.jpg"
+    },
+    {
+        "name": "Kellogs GAA Cul Camps",
+        "category": "Sports Camps",
+        "image": "cul-camps.jpg"
+    },
+    {
+        "name": "Athlone Regional Sports",
+        "category": "Multi-Activity Camps",
+        "image": "img_arsc.jpg"
+    },
+    {
+        "name": "AIT Sports Camps",
+        "id": 4,
+        "category": "Sports Camps",
+        "image": "ait_sports.jpg"
+    }
+]
