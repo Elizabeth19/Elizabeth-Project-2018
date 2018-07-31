@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
 
+// Middleware
 var http = require('http');
 var bodyParser = require("body-parser");
 var fs = require('fs');
@@ -38,14 +39,30 @@ app.get('/products' , function(req, res) {
   
 })
 
-// This function calls the gallery view when the user navigates to this page.
+// This function calls the Gallery Page view when the user navigates to this page.
 app.get('/gallery' , function(req, res) {
   res.render("gallery");
   console.log("Gallery Page is rendered"); // log function is used to output data to the terminal to check that the app is doing as intended
   
 })
 
+// This function calls the Contact Page view when the user navigates to this page.
+app.get('/contact' , function(req, res) {
+  res.render("contact");
+  console.log("Contact Page is rendered"); // log function is used to output data to the terminal to check that the app is doing as intended
+  
+})
+
+// This function allows the Contact Form Post Request to return a message. I was not able to take this functionality further in this project
+// To be able to capture the feedback and keep it as persistent data.
+app.post('/', function(req, res) {
+  res.end("Thank you for your Feedback! We have noted your input!");
+  console.log("Feedback Post Successful"); // log function is used to output data to the terminal to check that the app is doing as intended
+  
+});
+
 // The function to render the Show Individual Product / Camp Page
+
 app.get('/show/:name', function(req, res) {
   function findProd(which) {
   return which.name === req.params.name;  
@@ -97,6 +114,7 @@ app.post('/add', function(req, res) {
     name: req.body.name,
     id: newId, // This is the variable created above
     category: req.body.category,
+    website: req.body.website,
     image: req.body.image
   };
   
@@ -137,32 +155,88 @@ app.get('/edit/:name', function(req, res){
 app.post('/edit/:name', function(req, res){
   var json = JSON.stringify(products);
   
-  fs.readFile('./model/products.json', 'utf8', function readFileCallback(err, data1){
-    if (err){
-      console.log("something Went Wrong");
-    } else {
       var keyToFind = req.params.name; // call name from the url
-      
-      var str2 = products;
       
       var data = products;
       var index = data.map(function(product) {return product.name;}).indexOf(keyToFind)
       
-      var x = req.body.newname;
-      var y = req.body.newcategory;
+      var w = req.body.newname;
+      var x = req.body.newcategory;
+      var y = req.body.newwebsite;
       var z = req.body.newimage;
       
-      products.splice(index, 1 , {name: x, category: y, image: z} );
+      products.splice(index, 1 , {name: w, category: x, website: y, image: z} );
       
       json = JSON.stringify(products, null, 4);
       
       fs.writeFile('./model/products.json', json, 'utf8'); // Writing the data back to the file
 	
       
-    }
-  })
   res.redirect("/products")
 });
+
+
+// Delete Products Function
+
+app.get('/delete/:name', function(req, res) {
+  
+  var json = JSON.stringify(products); // this is to Convert it from an object to string with stringify for use below
+  
+// Allow app to access the file that we want to delete  
+ fs.readFile('./model/products.json', 'utf8', function readFileCallback(err, data){
+    if (err){
+        console.log(err);
+    } else {
+      
+var keytoFind = req.params.name; // This is to go through the products and find position based on the item name
+
+      var str2 = products; // this changes the json to a variable str2
+
+var data = str2; // this declares data = str2
+var index2 = data.map(function(d) { return d['name']; }).indexOf(keytoFind) // finds the position by nae taken from http://jsfiddle.net/hxfdZ/
+
+console.log("The position is " + index2 + "    " + keytoFind)
+     
+products.splice(index2 ,1); // This deletes one product only, from the position where the name occurs
+       
+   json = JSON.stringify(products, null, 4); //convert it back to json
+    fs.writeFile('./model/products.json', json, 'utf8'); // write it back 
+  console.log("Product Deleted");
+    
+}});
+
+res.redirect("/products");
+});
+
+// End Delete Products Function
+
+
+// Delete products Function 
+app.get('/delete/:name', function(req, res){
+  // allow app to access file we want to modify
+  
+  fs.readFile('./model/products.json')
+  
+  var keytoFind = req.param.name; // go through products and find position based on the item name
+  
+  var index2 = products.map(function(d) {return d['name']}).indexOf(keytoFind) // finds position and declare position as variable index
+  
+  // log the position and the name of the product in the console
+  
+  console.log("One to telete is " + keytoFind)
+  
+  products.splice(index2, 1); // This delets one product only from the location where the name occurs
+  
+  json = JSON.stringify(products, null, 4)
+  fs.writeFile('./model/products.json', json, 'utf8'); // write the data back to our persistant data.
+  
+  console.log("It worked product deleted");
+  
+  res.redirect("/products")
+})
+
+
+
 
 // Function gets the application up and running on the Development Server
 app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {

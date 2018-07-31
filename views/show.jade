@@ -36,8 +36,6 @@ html(lang='en')
               a(href='/gallery') Gallery
             li
               a(href='/contact') Contact
-            li
-              a(href='/login') Login/Register
           .extra-text.visible-xs
             a.probootstrap-burger-menu(href='#')
               i Menu
@@ -71,7 +69,7 @@ html(lang='en')
       .container
         .probootstrap-section-heading.text-center.mb50.probootstrap-animate
           h4.sub-heading Welcome to Athlone Kids Camps
-          h2.heading Individual Camp Information
+          h2.heading Individual Camps
         .row
           .col-lg-4.col-md-4.col-sm-6.col-xs-12.probootstrap-animate(data-animate-effect='fadeIn')
             each product in indi
@@ -79,10 +77,9 @@ html(lang='en')
                 img.img-responsive(src='../#{product.image}', alt='Athlone Kids Camps')
                 h4.itemtitle #{product.name}
                 p.itemp Category : #{product.category}
-          .clearfix.visible-sm-block
-          .clearfix.visible-lg-block.visible-md-block
-          .clearfix.visible-sm-block
-          .clearfix.visible-lg-block.visible-md-block
+                p.itemp Website : #{product.website}             
+                a.btn.btn-primary.btn-sm(href='#{product.website}' target="_blank") Book Here
+          
     section.probootstrap-section.probootstrap-bg(style='background-image: url(/slider_2.jpg);')
       .container.text-center
         h2.heading.probootstrap-animate(data-animate-effect='fadeIn') Athlone Kids Camps - For all your Local Kids Camps!
@@ -198,7 +195,7 @@ html(lang='en')
                 | Sign up for our free Newsletter stuffed full of ideas of all the cool camps available and Be in the know!
               form(action='#')
                 .form-field
-                  input.form-control(type='text', placeholder='Enter your email')
+                  input.form-control(type='text', required, placeholder='Enter your email')
                   button.btn.btn-subscribe
                     i.icon-arrow-long-right
         .row.copyright

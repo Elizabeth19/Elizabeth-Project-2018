@@ -2,27 +2,31 @@
     {
         "name": "Lets Go Summer Camp",
         "category": "Multi-Activity Camps",
+        "website": "https://www.letsgo.ie/",
         "image": "letsgo.png"
     },
     {
         "name": "FAI Soccer Summer Schools",
         "category": "Sports Camps",
+        "website": "https://camps.fai.ie/summer-soccer-schools/",
         "image": "fai_soccer.jpg"
     },
     {
         "name": "Kellogs GAA Cul Camps",
         "category": "Sports Camps",
+        "website": "https://www.kelloggsculcamps.gaa.ie/",
         "image": "cul-camps.jpg"
     },
     {
         "name": "Athlone Regional Sports",
         "category": "Multi-Activity Camps",
+        "website": "http://www.athlonersc.ie/kids/",
         "image": "img_arsc.jpg"
     },
     {
         "name": "AIT Sports Camps",
-        "id": 4,
-        "category": "Sports Camps",
+        "category": "Sports & Athletics Camps",
+        "website": "http://www.aitsport.ie/kids-camps-ait-sport/",
         "image": "ait_sports.jpg"
     }
 ]

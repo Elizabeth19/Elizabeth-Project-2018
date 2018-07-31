@@ -33,13 +33,9 @@ html(lang='en')
             li.active
               a(href='/products') Camps
             li
-              a(href='add') Add Camps
-            li
               a(href='/gallery') Gallery
             li
               a(href='/contact') Contact
-            li
-              a(href='/login') Login/Register
           .extra-text.visible-xs
             a.probootstrap-burger-menu(href='#')
               i Menu
@@ -74,6 +70,7 @@ html(lang='en')
         .probootstrap-section-heading.text-center.mb50.probootstrap-animate
           h4.sub-heading Welcome to Athlone Kids Camps
           h2.heading Summer Camps
+          a.btn.btn-primary.btn-sm(href='add') Add New Camps
         .row
           .grid-container
             each product in products
@@ -81,8 +78,10 @@ html(lang='en')
                 img.img-responsive(src='#{product.image}', alt='Athlone Kids Camps')
                 h4.itemtitle #{product.name}
                 p.itemp Category : #{product.category}
-                a.btn.btn-primary.btn-sm(href="/show/#{product.name}") Show
+                p.itemp Website : #{product.website}
+                a.btn.btn-primary.btn-sm(href="/show/#{product.name}") Details
                 a.btn.btn-primary.btn-sm(href="/edit/#{product.name}") Edit
+                a.btn.btn-primary.btn-sm(href="/delete/#{product.name}") Delete
           .clearfix.visible-sm-block
           .clearfix.visible-lg-block.visible-md-block
           .clearfix.visible-sm-block
@@ -202,7 +201,7 @@ html(lang='en')
                 | Sign up for our free Newsletter stuffed full of ideas of all the cool camps available and Be in the know!
               form(action='#')
                 .form-field
-                  input.form-control(type='text', placeholder='Enter your email')
+                  input.form-control(type='text', required, placeholder='Enter your email')
                   button.btn.btn-subscribe
                     i.icon-arrow-long-right
         .row.copyright

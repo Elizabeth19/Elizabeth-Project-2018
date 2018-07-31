@@ -32,14 +32,10 @@ html(lang='en')
               a(href='/about') About
             li
               a(href='/products') Camps
-            li
-              a(href='add') Add Camps
             li.active
               a(href='/gallery') Gallery
             li
               a(href='/contact') Contact
-            li
-              a(href='/login') Login/Register
           .extra-text.visible-xs
             a.probootstrap-burger-menu(href='#')
               i Menu
@@ -234,7 +230,7 @@ html(lang='en')
                 | Sign up for our free Newsletter stuffed full of ideas of all the cool camps available and Be in the know!
               form(action='#')
                 .form-field
-                  input.form-control(type='text', placeholder='Enter your email')
+                  input.form-control(type='text', required, placeholder='Enter your email')
                   button.btn.btn-subscribe
                     i.icon-arrow-long-right
         .row.copyright

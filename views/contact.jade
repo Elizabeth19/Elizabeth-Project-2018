@@ -7,9 +7,9 @@ html(lang='en')
     meta(name='description', content='Free Bootstrap Theme by uicookies.com')
     meta(name='keywords', content='free website templates, free bootstrap themes, free template, free bootstrap, free website template')
     link(href='https://fonts.googleapis.com/css?family=Just+Another+Hand|Open+Sans:300,400', rel='stylesheet')
-    link(rel='stylesheet', href='../css/styles-merged.css')
-    link(rel='stylesheet', href='../css/style.min.css')
-    link(rel='stylesheet', href='../css/custom.css')
+    link(rel='stylesheet', href='css/styles-merged.css')
+    link(rel='stylesheet', href='css/style.min.css')
+    link(rel='stylesheet', href='css/custom.css')
     //if lt IE 9
       script(src='js/vendor/html5shiv.min.js')
       script(src='js/vendor/respond.min.js')
@@ -32,11 +32,9 @@ html(lang='en')
               a(href='/about') About
             li
               a(href='/products') Camps
-            li.active
-              a(href='edit') Update Camps
             li
               a(href='/gallery') Gallery
-            li
+            li.active
               a(href='/contact') Contact
           .extra-text.visible-xs
             a.probootstrap-burger-menu(href='#')
@@ -54,12 +52,12 @@ html(lang='en')
                   i.icon-instagram2
     // END: header
     section.probootstrap-slider.flexslider
-      .probootstrap-text-intro
+      div(style='position: absolute; top: 0; left: 0; width: 100%; z-index: 49;')
         .container
           .row
             .col-md-10.col-md-offset-1
               .probootstrap-slider-text.text-center
-                h1.probootstrap-heading.probootstrap-animate.mb20(data-animate-effect='fadeIn') 100% Fun
+                h1.probootstrap-heading.probootstrap-animate.mb20(data-animate-effect='fadeIn') Contact
                 .probootstrap-animate.probootstrap-sub-wrap.mb30(data-animate-effect='fadeIn') Your comprehensive Guide to your Local Kids Camps
                 p.probootstrap-animate(data-animate-effect='fadeIn')
                   a.btn.btn-ghost.btn-ghost-white(href='#') Be in the know!
@@ -70,23 +68,44 @@ html(lang='en')
     section.probootstrap-section
       .container
         .probootstrap-section-heading.text-center.mb50.probootstrap-animate
-          h4.sub-heading Welcome to Athlone Kids Camps
-          h2.heading Update Your Camps Here!!
-     .formHold
-       h1.itemtitle
-            each product in indOne
-             form(method="post")
-               fieldset 
-                 label(for="newname") Camp Name:
-                 input(name="newname", type="text", required, value="#{product.name}")
-                 label(for="newcategory") Category:
-                 input(name="newcategory", type="text", required, value="#{product.category}")
-                 label(for="newwebsite") Website:
-                 input(name="newwebsite", type="text", required, value="#{product.website}")
-                 label(for="newimage") Camp Image:
-                 input(name="newimage", type="text", required, value="#{product.image}")
-                 button.btn.btn-primary.btn-sm(type="submit") Update #{product.name}
-                           
+          h4.sub-heading Get In Touch
+          h2.heading Let's Chat
+        .row
+          .col-md-8
+            form.probootstrap-form.mb60(action="/" method="post")
+              .row
+                .col-md-6
+                  .form-group
+                    label(for='fname') First Name
+                    input#fname.form-control(type='text', required, name='fname')
+                .col-md-6
+                  .form-group
+                    label(for='lname') Last Name
+                    input#lname.form-control(type='text', required, name='lname')
+              .form-group
+                label(for='email') Email
+                input#email.form-control(type='email', required, name='email')
+              .form-group
+                label(for='message') Message
+                textarea#message.form-control(cols='30', rows='10', required, name='message')
+              .form-group
+                 button.btn.btn-primary.btn-sm(type="submit") Send Message
+          .col-md-3.col-md-push-1
+            h4 Contact Information
+            ul.with-icon.colored
+              li
+                i.icon-location2
+                span Athlone, Counties Westmeath and Roscommon
+              li
+                i.icon-mail
+                span athlonekidscamps@gmail.com
+              li
+                i.icon-phone2
+                span +090 6412345
+            h4 Feedback
+            p We would love to hear from you! Drop us an email and tell us what you think!
+            // <p><a href="#">Learn More</a></p>
+    #map
     section.probootstrap-section.probootstrap-bg(style='background-image: url(/slider_2.jpg);')
       .container.text-center
         h2.heading.probootstrap-animate(data-animate-effect='fadeIn') Athlone Kids Camps - For all your Local Kids Camps!
@@ -98,12 +117,12 @@ html(lang='en')
           .col-lg-4.col-md-4.col-sm-6.col-xs-12.probootstrap-animate
             .service
               .icon
-                i.icon-bike
+                i.icon-leaf
               h2.heading Multi-Activity Camps
               p
                 | Multi-Activity camps provide "taster" or introductory sessions (about 4 -6 a day) in a range of different activities.
               p
-                | Activities such as sports, adventure and creative arts are sampled for the enjoyment of each participant.
+                | Activities such as sports, adventure, creative and performing arts are sampled for the enjoyment of each participant.
           .col-lg-4.col-md-4.col-sm-6.col-xs-12.probootstrap-animate
             .service
               .icon
@@ -122,7 +141,7 @@ html(lang='en')
               p
                 | Performance Arts Camps can include Drama, Singing, Dancing and Music, or possibly a combination of all of these.
               p
-                | Given by varied schools of Music, Speech and Drama, Ballet and Modern, and Irish Dancing.
+                | Given by schools such as Athlone School of Music, Speech and Drama, Ballet and Modern and Irish Dancing schools.
           .clearfix.visible-lg-block.visible-md-block
           .col-lg-4.col-md-4.col-sm-6.col-xs-12.probootstrap-animate
             .service
@@ -153,7 +172,7 @@ html(lang='en')
               p
                 | Students leave with an increased sense of confidence they can use long after the Summer Camp has finished.
           .clearfix.visible-lg-block.visible-md-block
-    footer.probootstrap-footer.probootstrap-bg(style='background-image: url(/slider_3.jpg)')
+    footer.probootstrap-footer.probootstrap-bg(style='background-image: url(img/slider_3.jpg)')
       .container
         .row.mb60
           .col-md-3
@@ -224,6 +243,9 @@ html(lang='en')
     .gototop.js-top
       a.js-gotop(href='#')
         i.icon-chevron-thin-up
-    script(src='../js/scripts.min.js')
-    script(src='../js/main.min.js')
-    script(src='../js/custom.js')
+    script(src='js/scripts.min.js')
+    script(src='js/main.min.js')
+    // Google Map - New API Key – Google Maps - AIzaSyC0fsQJ7Vl1ePvajGt1Qhooc54wFGuwm-A
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC0fsQJ7Vl1ePvajGt1Qhooc54wFGuwm-A&sensor=false')
+    script(src='js/google-map.js')
+    script(src='js/custom.js')
