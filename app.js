@@ -16,6 +16,22 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 var products = require("./model/products.json"); // allow the app to access the products.json file
 
+// Database Connection to mongodb on mLabs for the functionality on the Locations Page
+// Mongoose Connection - mongodb://athlonekidscamps:nci2018@ds161751.mlab.com:61751/athlonekidscamps
+
+var mongoose = require("mongoose")
+
+mongoose.connect('mongodb://athlonekidscamps:nci2018@ds161751.mlab.com:61751/athlonekidscamps', {useNewUrlParser:true} )
+  .then(function(){
+    console.log("Connection to dbmongo Successful")
+  })
+  .catch(function(){
+    console.log("ERROR connecting")
+  })
+
+
+//////// Functionality for the app pages //////
+
 // This function calls the Homepage view when the user navigates to this page.
 app.get('/', function(req, res) {
   res.render("index");
@@ -38,6 +54,43 @@ app.get('/products' , function(req, res) {
   console.log("Products Page is rendered"); // log function is used to output data to the terminal to check that the app is doing as intended
   
 })
+
+// Locations Page Functionality //
+
+// Location Specific Schema //
+
+var LocationSchema = new mongoose.Schema({
+  name:String
+});
+
+var Location = mongoose.model('locations', LocationSchema);
+
+// This function calls the Locations Page view when the user navigates to this page.
+app.get('/locations' , function(req, res) {
+ // res.render("locations");
+  console.log("Locations Page is rendered"); // log function is used to output data to the terminal to check that the app is doing as intended
+  
+//})
+
+//app.get('/locations', function(req, res){
+    Location.find({}, function(err, location){
+      if(err) console.log('errorpage');
+      res.render('locations', {locations:location} )
+    });
+});
+
+/*
+ * GET locations listing.
+ */
+
+exports.list = function(req, res){
+//   res.send("respond with a resource ");
+    var location = {name:"Athlone Institute of Technology"}
+    
+    res.render('locations', location)
+};
+
+
 
 // This function calls the Gallery Page view when the user navigates to this page.
 app.get('/gallery' , function(req, res) {

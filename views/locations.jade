@@ -1,0 +1,224 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Athlone Kids Camps
+    meta(name='description', content='Free Bootstrap Theme by uicookies.com')
+    meta(name='keywords', content='free website templates, free bootstrap themes, free template, free bootstrap, free website template')
+    link(href='https://fonts.googleapis.com/css?family=Just+Another+Hand|Open+Sans:300,400', rel='stylesheet')
+    link(rel='stylesheet', href='css/styles-merged.css')
+    link(rel='stylesheet', href='css/style.min.css')
+    link(rel='stylesheet', href='css/custom.css')
+    //if lt IE 9
+      script(src='js/vendor/html5shiv.min.js')
+      script(src='js/vendor/respond.min.js')
+  body
+    // START: header
+    .probootstrap-loader
+    header.probootstrap-header(role='banner')
+      .container
+        a.probootstrap-logo(href='/')
+          | Athlone Kids Camps
+          span .
+        a.probootstrap-burger-menu.visible-xs(href='#')
+          i Menu
+        .mobile-menu-overlay
+        nav.probootstrap-nav.hidden-xs(role='navigation')
+          ul.probootstrap-main-nav
+            li
+              a(href='/') Home
+            li
+              a(href='/about') About
+            li
+              a(href='/products') Camps
+            li.active
+              a(href='/locations') Locations
+            li
+              a(href='/gallery') Gallery
+            li
+              a(href='/contact') Contact
+          .extra-text.visible-xs
+            a.probootstrap-burger-menu(href='#')
+              i Menu
+            h5 Connect
+            ul.social-buttons
+              li
+                a(href='#')
+                  i.icon-twitter
+              li
+                a(href='#')
+                  i.icon-facebook2
+              li
+                a(href='#')
+                  i.icon-instagram2
+    // END: header
+    section.probootstrap-slider.flexslider
+      div(style='position: absolute; top: 0; left: 0; width: 100%; z-index: 49;')
+        .container
+          .row
+            .col-md-10.col-md-offset-1
+              .probootstrap-slider-text.text-center
+                h1.probootstrap-heading.probootstrap-animate.mb20(data-animate-effect='fadeIn') Locations
+                .probootstrap-animate.probootstrap-sub-wrap.mb30(data-animate-effect='fadeIn') Your comprehensive Guide to your Local Kids Camps
+                p.probootstrap-animate(data-animate-effect='fadeIn')
+                  a.btn.btn-ghost.btn-ghost-white(href='#') Be in the know!
+      ul.slides
+        li(style='background-image: url(/slider_1.jpg);')
+        li(style='background-image: url(/slider_2.jpg);')
+    // END: slider
+    section.probootstrap-section
+      .container
+        .probootstrap-section-heading.text-center.mb50.probootstrap-animate
+          h4.sub-heading Welcome to Athlone Kids Camps
+          h2.heading Locations to all your Local Kids Camps
+            h4 #{name}
+            ul
+            each location in locations
+                 li <a href="/locations/#{location.name}">#{location.name}</a>
+         
+    #map
+    
+    section.probootstrap-section.probootstrap-bg(style='background-image: url(/slider_2.jpg);')
+      .container.text-center
+        h2.heading.probootstrap-animate(data-animate-effect='fadeIn') Athlone Kids Camps - For all your Local Kids Camps!
+        p.sub-heading.probootstrap-animate(data-animate-effect='fadeIn')
+          | Your comprehensive guide to the best and most popular Kids Camps in and around your local Athlone area!
+    section.probootstrap-section
+      .container
+        .row
+          .col-lg-4.col-md-4.col-sm-6.col-xs-12.probootstrap-animate
+            .service
+              .icon
+                i.icon-leaf
+              h2.heading Multi-Activity Camps
+              p
+                | Multi-Activity camps provide "taster" or introductory sessions (about 4 -6 a day) in a range of different activities.
+              p
+                | Activities such as sports, adventure, creative and performing arts are sampled for the enjoyment of each participant.
+          .col-lg-4.col-md-4.col-sm-6.col-xs-12.probootstrap-animate
+            .service
+              .icon
+                i.icon-hand
+              h2.heading Sports Camps
+              p
+                | The sports camps are usually single activity sports camps led by qualified Instructors / Coaches / Associations.
+              p
+                | Sports camps include Athletics, GAA, Soccer and more. Examples: FAI Soccer Camp, Kellogg's GAA Cul Camps etc.
+          .clearfix.visible-sm-block
+          .col-lg-4.col-md-4.col-sm-6.col-xs-12.probootstrap-animate
+            .service
+              .icon
+                i.icon-tree
+              h2.heading Performance Arts Camps
+              p
+                | Performance Arts Camps can include Drama, Singing, Dancing and Music, or possibly a combination of all of these.
+              p
+                | Given by schools such as Athlone School of Music, Speech and Drama, Ballet and Modern and Irish Dancing schools.
+          .clearfix.visible-lg-block.visible-md-block
+          .col-lg-4.col-md-4.col-sm-6.col-xs-12.probootstrap-animate
+            .service
+              .icon
+                i.icon-location
+              h2.heading Computer and STEM Camps
+              p
+                | Tech camps include all the trade tools for your budding tech rockstar to pick up valuable tech and STEM skills!
+              p
+                | Designed for children of all abilities and includes WeVideo, Soundtrap, Lego, BBC Micro Bit and more...
+          .clearfix.visible-sm-block
+          .col-lg-4.col-md-4.col-sm-6.col-xs-12.probootstrap-animate
+            .service
+              .icon
+                i.icon-water
+              h2.heading Outdoor Adventure Camps
+              p
+                | Outdoor adventure camps are mostly run by specialist centres catering to specialist outdoor pursuits.
+              p
+                | Camps usually include a range of outdoor sports such as kayaking, sailing, rock climbing, abseiling etc...
+          .col-lg-4.col-md-4.col-sm-6.col-xs-12.probootstrap-animate
+            .service
+              .icon
+                i.icon-air
+              h2.heading Teen Camps
+              p
+                | Teen camps help teenagers make the most of their interests to acquire great new skills of their choosing.
+              p
+                | Students leave with an increased sense of confidence they can use long after the Summer Camp has finished.
+          .clearfix.visible-lg-block.visible-md-block
+    footer.probootstrap-footer.probootstrap-bg(style='background-image: url(/slider_3.jpg)')
+      .container
+        .row.mb60
+          .col-md-3
+            .probootstrap-footer-widget
+              h4.heading About Athlone Kids Camps
+              p
+                | Find out more about your Local Kids Camps in Athlone: Summer Camps, Halloween Camps, Christmas Camps and Easter Camps!
+              p
+                a(href='/about') Read more...
+          .col-md-3
+            .probootstrap-footer-widget
+              h4.heading Quick Links
+              ul.stack-link
+                li
+                  a(href='https://www.letsgo.ie/', target='_blank') Let's Go! Summer Camps
+                li
+                  a(href='https://camps.fai.ie/summer-soccer-schools/', target='_blank') FAI Soccer Summer Schools
+                li
+                  a(href='https://www.kelloggsculcamps.gaa.ie/', target='_blank') Kellogs GAA Cul Camps
+                li
+                  a(href='http://www.athlonersc.ie/activities-summer/', target='_blank') Athlone Regional Sports Centre
+                li
+                  a(href='http://www.aitsport.ie/kids-camps-ait-sport/', target='_blank') AIT Kids Camps
+                li
+                  a(href='https://sparkademy.ie/summer-camps-2018/', target='_blank') Sparkademy Summer Camps
+          .col-md-3
+            .probootstrap-footer-widget
+              h4.heading Kids Camps
+              ul.stack-link
+                li
+                  a(href='#') Multi-Activity Camps
+                li
+                  a(href='#') Sports Camps
+                li
+                  a(href='#') Performance Arts Camps
+                li
+                  a(href='#') Computer and STEM Camps
+                li
+                  a(href='#') Outdoor Adventure Camps
+                li
+                  a(href='#') Teen Camps
+          .col-md-3
+            .probootstrap-footer-widget
+              h4.heading Subscribe
+              p
+                | Sign up for our free Newsletter stuffed full of ideas of all the cool camps available and Be in the know!
+              form(action='#')
+                .form-field
+                  input.form-control(type='text', required, placeholder='Enter your email')
+                  button.btn.btn-subscribe
+                    i.icon-arrow-long-right
+        .row.copyright
+          .col-md-6
+            .probootstrap-footer-widget
+              p Developed by Athlone Kids Camps 2018
+          .col-md-6
+            .probootstrap-footer-widget.right
+              ul.probootstrap-footer-social
+                li
+                  a(href='#')
+                    i.icon-twitter
+                li
+                  a(href='#')
+                    i.icon-facebook
+                li
+                  a(href='#')
+                    i.icon-instagram2
+    .gototop.js-top
+      a.js-gotop(href='#')
+        i.icon-chevron-thin-up
+    script(src='js/scripts.min.js')
+    script(src='js/main.min.js')
+    // Google Map - New API Key – Google Maps - AIzaSyC0fsQJ7Vl1ePvajGt1Qhooc54wFGuwm-A
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC0fsQJ7Vl1ePvajGt1Qhooc54wFGuwm-A&sensor=false')
+    script(src='js/google-map.js')
+    script(src='js/custom.js')
