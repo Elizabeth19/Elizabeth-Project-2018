@@ -61,7 +61,7 @@ app.get('/products' , function(req, res) {
 
 // ** NEW FUNCTION ** LOCATIONS PAGE Functionality ** This Functionality is linked to dbmongo DATABASE ** //
 
-// Setting up the Location Specific Schema //
+// Setting up the Location specific Schema //
 
 var LocationSchema = new mongoose.Schema({
   name:String
@@ -326,3 +326,17 @@ app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function() {
   console.log("Yipee it's running");
   
 });
+
+// ********************* REFERENCES ********************** //
+
+// ** APP FUNCTIONALITY - NODE JS, JSON, JADE ** 
+// McCabe.L. (2018). "Web Application Development" (Class Lecture, NCI Live app. [ONLINE] 
+// Available at: https://github.com/LiamMcC/ncilive/blob/Complete/app.js
+// [Accessed 09 July 2018], National College of Ireland, Dublin, March 2018.)
+
+// ** WEB APP TEMPLATE - FREE HTML BOOTSTRAP TEMPLATE from UI COOKIES ** 
+// UI Cookies (2018). GREEN. [ONLINE] 
+// Available at: https://uicookies.com/downloads/green-free-html5-website-template-using-bootstrap-framework/ [Accessed 19 May 2018]
+
+// ** DB MONGO MLAB DATABASE CONNECTION **
+// mLab DOCS + SUPPORT. 2018. [ONLINE] Available at: https://docs.mlab.com/ [Accessed 31 July 2018]

@@ -25,7 +25,7 @@
     },
     {
         "name": "AIT Sports Camps",
-        "category": "Sports & Athletics Camps",
+        "category": "Sports Camps",
         "website": "http://www.aitsport.ie/kids-camps-ait-sport/",
         "image": "ait_sports.jpg"
     },
@@ -42,5 +42,11 @@
         "category": "Performance Arts Camps",
         "website": "http://www.shannondanceacademy.com/",
         "image": "ballet.jpg"
+    },
+    {
+        "name": "Anyone4Science",
+        "category": "Computer and STEM Camps",
+        "website": "https://anyone4science.com/camps/summer-camps-2018/",
+        "image": "anyone4science.jpg"
     }
 ]
