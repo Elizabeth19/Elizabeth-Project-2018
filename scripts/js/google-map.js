@@ -50,18 +50,18 @@ function init() {
 	// Use an Array of Markers - This is cleaner than creating a marker for each location and the functionality required to display details of location 
 	
 	var markers = [
-	{coords:{lat:53.4180,lng:-7.9036}, content:'<h6>AIT: AIT Sports/FAI Soccer Schools/GAA Cul Camp/Anyone4Science Camps</h6>'},
+	{coords:{lat:53.4180,lng:-7.9036}, content:'<h6>AIT Sports/FAI Soccer Schools/GAA Cul Camp/Anyone4Science Camps - AIT</h6>'},
 	{coords:{lat:53.4241,lng:-7.9195}, content:'<h6>Lets Go Camps - Athlone Community College</h6>'},
-	{coords:{lat:53.4629,lng:-7.9912}, content:'<h6>Hodson Bay: FAI Soccer Schools/Baysports Camps</h6>'},
+	{coords:{lat:53.4629,lng:-7.9912}, content:'<h6>FAI Soccer Schools/Baysports Camps - Hodson Bay</h6>'},
 	{coords:{lat:53.5435,lng:-8.0477}, content:'<h6>FAI Soccer Schools Camps - St Johns Lecarrow</h6>'},
 	{coords:{lat:53.4244,lng:-7.8976}, content:'<h6>GAA Cul Camps - Garrycastle</h6>'},
 	{coords:{lat:53.3967,lng:-7.7260}, content:'<h6>GAA Cul Camps - Moate Community School</h6>'},
 	{coords:{lat:53.3689,lng:-8.0206}, content:'<h6>GAA Cul Camps - Clann na nGael GAA</h6>'},
 	{coords:{lat:53.3899,lng:-8.4748}, content:'<h6>GAA Cul Camps - Padraig Pearses GAA</h6>'},
 	{coords:{lat:53.4291,lng:-7.9217}, content:'<h6>Athlone Regional Sports Centre Camps</h6>'},
-	{coords:{lat:53.4113,lng:-7.9891}, content:'<h6>Sparkademy STEM Camps</h6>'},
-	{coords:{lat:53.4222,lng:-7.9713}, content:'<h6>Shannon Dance Academy Ballet Camps</h6>'},
-	{coords:{lat:53.4288,lng:-7.8761}, content:'<h6>Athlone Equestrian Centre Pony Camps</h6>'}
+	{coords:{lat:53.4113,lng:-7.9891}, content:'<h6>Sparkademy STEM Camps - Drum Community Centre</h6>'},
+	{coords:{lat:53.4222,lng:-7.9713}, content:'<h6>Shannon Dance Academy Ballet Camps - Monksland</h6>'},
+	{coords:{lat:53.4288,lng:-7.8761}, content:'<h6>Athlone Equestrian Centre Pony Camps - Moydrum</h6>'}
 	
 	];
 	

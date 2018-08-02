@@ -71,10 +71,10 @@ html(lang='en')
       .container
         .probootstrap-section-heading.text-center.mb50.probootstrap-animate
           h4.sub-heading Get In Touch
-          h2.heading Let's Chat
+          h2.heading Please leave your Feedback
         .row
           .col-md-8
-            form.probootstrap-form.mb60(action="/" method="post")
+            form.probootstrap-form.mb60(action="/contact" method="post")
               .row
                 .col-md-6
                   .form-group
@@ -103,10 +103,13 @@ html(lang='en')
                 span athlonekidscamps@gmail.com
               li
                 i.icon-phone2
-                span +090 6412345
-            h4 Feedback
+                span 090 6412345
+            h4 Let's Chat
             p We would love to hear from you! Drop us an email and tell us what you think!
-            // <p><a href="#">Learn More</a></p>
+            h4 Subscribe
+            p Subcribe and leave your email address on our  
+              a(href='/') Homepage
+              |  to be in the know about all the local Kids Camps in your area!
     section.probootstrap-section.probootstrap-bg(style='background-image: url(/slider_2.jpg);')
       .container.text-center
         h2.heading.probootstrap-animate(data-animate-effect='fadeIn') Athlone Kids Camps - For all your Local Kids Camps!
@@ -222,13 +225,13 @@ html(lang='en')
                 | Sign up for our free Newsletter stuffed full of ideas of all the cool camps available and Be in the know!
               form(action='#')
                 .form-field
-                  input.form-control(type='text', required, placeholder='Enter your email')
+                  input.form-control(type='email', name='email', required, placeholder='Enter your email')
                   button.btn.btn-subscribe
                     i.icon-arrow-long-right
         .row.copyright
           .col-md-6
             .probootstrap-footer-widget
-              p Developed by Athlone Kids Camps 2018
+              p Developed by Athlone Kids Camps 2018 (from Free Bootstrap Theme by uicookies.com)
           .col-md-6
             .probootstrap-footer-widget.right
               ul.probootstrap-footer-social

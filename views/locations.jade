@@ -73,10 +73,14 @@ html(lang='en')
           h4.sub-heading Welcome to Athlone Kids Camps
           h2.heading Locations to all your Local Kids Camps
             h4 #{name}
-            ul
-            each location in locations
-                 li <a href="/locations/#{location.name}">#{location.name}</a>
-         
+            form(action='/locations', method='post')
+                .form-field
+                  input(type='text', name='name', required, placeholder='Add a new Location')
+                  button.btn.btn-primary.btn-sm(type="submit") Save
+                  ul
+                  each location in locations
+                    li <a href="/locations/#{location.name}">#{location.name}</a>
+  
     #map
     
     section.probootstrap-section.probootstrap-bg(style='background-image: url(/slider_2.jpg);')
@@ -194,13 +198,13 @@ html(lang='en')
                 | Sign up for our free Newsletter stuffed full of ideas of all the cool camps available and Be in the know!
               form(action='#')
                 .form-field
-                  input.form-control(type='text', required, placeholder='Enter your email')
+                  input.form-control(type='email', name='email', required, placeholder='Enter your email')
                   button.btn.btn-subscribe
                     i.icon-arrow-long-right
         .row.copyright
           .col-md-6
             .probootstrap-footer-widget
-              p Developed by Athlone Kids Camps 2018
+              p Developed by Athlone Kids Camps 2018 (from Free Bootstrap Theme by uicookies.com)
           .col-md-6
             .probootstrap-footer-widget.right
               ul.probootstrap-footer-social

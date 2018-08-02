@@ -7,9 +7,9 @@ html(lang='en')
     meta(name='description', content='Free Bootstrap Theme by uicookies.com')
     meta(name='keywords', content='free website templates, free bootstrap themes, free template, free bootstrap, free website template')
     link(href='https://fonts.googleapis.com/css?family=Just+Another+Hand|Open+Sans:300,400', rel='stylesheet')
-    link(rel='stylesheet', href='css/styles-merged.css')
-    link(rel='stylesheet', href='css/style.min.css')
-    link(rel='stylesheet', href='css/custom.css')
+    link(rel='stylesheet', href='../css/styles-merged.css')
+    link(rel='stylesheet', href='../css/style.min.css')
+    link(rel='stylesheet', href='../css/custom.css')
     //if lt IE 9
       script(src='js/vendor/html5shiv.min.js')
       script(src='js/vendor/respond.min.js')
@@ -30,7 +30,7 @@ html(lang='en')
               a(href='/') Home
             li
               a(href='/about') About
-            li.active
+            li
               a(href='/products') Camps
             li
               a(href='/locations') Locations
@@ -71,23 +71,10 @@ html(lang='en')
       .container
         .probootstrap-section-heading.text-center.mb50.probootstrap-animate
           h4.sub-heading Welcome to Athlone Kids Camps
-          h2.heading Summer Camps
-          a.btn.btn-primary.btn-sm(href='add') Add New Camps
-        .row
-          .grid-container.grid-container--fit
-            each product in products
-              .product-item
-                img.img-responsive(src='#{product.image}', alt='Athlone Kids Camps')
-                h4.itemtitle #{product.name}
-                p.itemp Category: #{product.category}
-                p.itemp Website: #{product.website}
-                a.btn.btn-primary.btn-sm(href="/show/#{product.name}") Details
-                a.btn.btn-primary.btn-sm(href="/edit/#{product.name}") Edit
-                a.btn.btn-primary.btn-sm(href="/delete/#{product.name}") Delete
-          .clearfix.visible-sm-block
-          .clearfix.visible-lg-block.visible-md-block
-          .clearfix.visible-sm-block
-          .clearfix.visible-lg-block.visible-md-block
+          h2.heading LOCATION
+          h3 #{location.name}
+          a(href='../locations') Back to Locations
+                           
     section.probootstrap-section.probootstrap-bg(style='background-image: url(/slider_2.jpg);')
       .container.text-center
         h2.heading.probootstrap-animate(data-animate-effect='fadeIn') Athlone Kids Camps - For all your Local Kids Camps!
@@ -225,6 +212,6 @@ html(lang='en')
     .gototop.js-top
       a.js-gotop(href='#')
         i.icon-chevron-thin-up
-    script(src='js/scripts.min.js')
-    script(src='js/main.min.js')
-    script(src='js/custom.js')
+    script(src='../js/scripts.min.js')
+    script(src='../js/main.min.js')
+    script(src='../js/custom.js')

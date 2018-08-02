@@ -28,5 +28,19 @@
         "category": "Sports & Athletics Camps",
         "website": "http://www.aitsport.ie/kids-camps-ait-sport/",
         "image": "ait_sports.jpg"
+    },
+    {
+        "name": "Baysports",
+        "id": null,
+        "category": "Multi-Activity Camps",
+        "website": "https://www.baysports.ie/",
+        "image": "baysports.jpg"
+    },
+    {
+        "name": "Shannon Dance Academy",
+        "id": null,
+        "category": "Performance Arts Camps",
+        "website": "http://www.shannondanceacademy.com/",
+        "image": "ballet.jpg"
     }
 ]

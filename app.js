@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 
-// Middleware
+// Middleware //
 var http = require('http');
 var bodyParser = require("body-parser");
 var fs = require('fs');
@@ -16,8 +16,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 var products = require("./model/products.json"); // allow the app to access the products.json file
 
-// Database Connection to mongodb on mLabs for the functionality on the Locations Page
-// Mongoose Connection - mongodb://athlonekidscamps:nci2018@ds161751.mlab.com:61751/athlonekidscamps
+// ** Database Connection to mongodb on mLabs for the functionality on the Locations Page
+// ** Mongoose Connection - mongodb://athlonekidscamps:nci2018@ds161751.mlab.com:61751/athlonekidscamps
 
 var mongoose = require("mongoose")
 
@@ -30,23 +30,27 @@ mongoose.connect('mongodb://athlonekidscamps:nci2018@ds161751.mlab.com:61751/ath
   })
 
 
-//////// Functionality for the app pages //////
+/////////////// ************* ///////////// FUNCTIONALITY FOR THE APP PAGES *************** ///////////// ************* ////////////
 
-// This function calls the Homepage view when the user navigates to this page.
+
+// ** NEW FUNCTION ** HOMEPAGE ** This function calls the Homepage view when the user navigates to this page.
+
 app.get('/', function(req, res) {
   res.render("index");
   console.log("Homepage now rendered"); // log function is used to output data to the terminal to check that the app is doing as intended
   
 });
 
-// This function calls the About Us view when the user navigates to this page.
+// ** NEW FUNCTION ** ABOUT PAGE ** This function calls the About Us view when the user navigates to this page.
+
 app.get('/about' , function(req, res) {
  res.render("about");
   console.log("About Page is rendered"); // log function is used to output data to the terminal to check that the app is doing as intended
   
 })
 
-// This function calls the Products view when the user navigates to this page.
+// ** NEW FUNCTION ** PRODUCTS / CAMPS PAGE ** This function calls the Products view when the user navigates to this page.
+
 app.get('/products' , function(req, res) {
  res.render("products",
            {products:products}
@@ -55,9 +59,9 @@ app.get('/products' , function(req, res) {
   
 })
 
-// Locations Page Functionality //
+// ** NEW FUNCTION ** LOCATIONS PAGE Functionality ** This Functionality is linked to dbmongo DATABASE ** //
 
-// Location Specific Schema //
+// Setting up the Location Specific Schema //
 
 var LocationSchema = new mongoose.Schema({
   name:String
@@ -65,56 +69,83 @@ var LocationSchema = new mongoose.Schema({
 
 var Location = mongoose.model('locations', LocationSchema);
 
-// This function calls the Locations Page view when the user navigates to this page.
+
+// This function calls the Locations view when the user navigates to this page and handles any errors.
+
 app.get('/locations' , function(req, res) {
- // res.render("locations");
+ 
   console.log("Locations Page is rendered"); // log function is used to output data to the terminal to check that the app is doing as intended
   
-//})
-
-//app.get('/locations', function(req, res){
     Location.find({}, function(err, location){
       if(err) console.log('errorpage');
       res.render('locations', {locations:location} )
     });
 });
 
+// This function allows for only one location to be queried on the client side
+
+app.get('/locations/:name', function(req, res){
+    Location.findOne({name:req.params.name}, function(err, location){
+      if(err) console.log('errorpage');
+      res.render("location", {location:location} )
+    });
+});
+
+
 /*
- * GET locations listing.
+ * GET Locations listing that are in dbmongo displaying on the Locations page.
  */
 
 exports.list = function(req, res){
-//   res.send("respond with a resource ");
+
     var location = {name:"Athlone Institute of Technology"}
     
     res.render('locations', location)
 };
 
 
+// This function allows for new locations to be added from the Locations page client-side and saved on dbmongo database
 
-// This function calls the Gallery Page view when the user navigates to this page.
+app.post('/locations', function(req,res){
+  var location = new Location({name:req.body.name})
+  location.save()
+  res.render("confirmation") // Catch page for New Location Added
+})
+
+
+// ** NEW FUNCTION ** GALLERY PAGE ** This function calls the Gallery Page view when the user navigates to this page.
+
 app.get('/gallery' , function(req, res) {
   res.render("gallery");
   console.log("Gallery Page is rendered"); // log function is used to output data to the terminal to check that the app is doing as intended
   
 })
 
-// This function calls the Contact Page view when the user navigates to this page.
+// ** NEW FUNCTION ** CONTACT PAGE ** This function calls the Contact Page view when the user navigates to this page.
+
 app.get('/contact' , function(req, res) {
   res.render("contact");
   console.log("Contact Page is rendered"); // log function is used to output data to the terminal to check that the app is doing as intended
   
 })
 
-// This function allows the Contact Form Post Request to return a message. I was not able to take this functionality further in this project
-// To be able to capture the feedback and keep it as persistent data.
-app.post('/', function(req, res) {
-  res.end("Thank you for your Feedback! We have noted your input!");
-  console.log("Feedback Post Successful"); // log function is used to output data to the terminal to check that the app is doing as intended
-  
-});
+// ** NEW FUNCTIONS ** CONTACT PAGE FORM SUBMIT ** HOMEPAGE SUBSCRIBE EMAIL SUBMIT ** CATCH PAGES FOR POST REQUESTS ** 
 
-// The function to render the Show Individual Product / Camp Page
+// This function allows the FORM Submission (Contact Page) and SUBSCRIBE button (Homepage) to direct to pages that have a 
+// return message for the user: - confirmation.jade for FEEDBACK and subscribe.jade for SUBSCRIBE.
+// Because it is nice to acknowledge the user for their input rather than not!
+// There is an option on each catch page to return to the Contact Page or Homepage respectively, via a link pointing back.
+
+app.post('/contact', function(req,res){ 
+  res.render("form") // Catch page for Contact Form submission
+})
+
+app.post('/', function(req,res){
+  res.render("subscribe") // Catch page for Subscribe submission
+})
+
+
+//  ** NEW FUNCTION ** PRODUCT / CAMPS PAGE ** This function is to render the Show Individual Product / Camp Page
 
 app.get('/show/:name', function(req, res) {
   function findProd(which) {
@@ -131,7 +162,7 @@ app.get('/show/:name', function(req, res) {
   
 })
 
-// Function to call the Add Product / Camp Page
+// ** NEW FUNCTION ** Function to call the Add Product / Camp Page
 
 app.get('/add', function(req, res){
   res.render("add");
@@ -139,7 +170,7 @@ app.get('/add', function(req, res){
   
 })
 
-//Function to create a New Product / Camp
+// ** NEW FUNCTION ** Function to create a New Product / Camp ** This Function is linked with Data in the JSON FILE **
 
 app.post('/add', function(req, res) {
   var count = Object.keys(products).length; // This tells us how many products we have in our JSON file
@@ -186,7 +217,7 @@ app.post('/add', function(req, res) {
 	res.redirect("/products")
 });
 
-// Code to render the Edit Products / Camps Page
+// ** NEW FUNCTION ** This function is to render the Edit Products / Camps Page
 
 app.get('/edit/:name', function(req, res){
 
@@ -229,7 +260,7 @@ app.post('/edit/:name', function(req, res){
 });
 
 
-// Delete Products Function
+// ** NEW FUNCTION ** DELETE PRODUCTS / CAMPS ** This function is for the Delete Products / Camps **
 
 app.get('/delete/:name', function(req, res) {
   
@@ -287,7 +318,6 @@ app.get('/delete/:name', function(req, res){
   
   res.redirect("/products")
 })
-
 
 
 
