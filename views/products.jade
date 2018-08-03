@@ -80,6 +80,8 @@ html(lang='en')
                 img.img-responsive(src='#{product.image}', alt='Athlone Kids Camps')
                 h4.itemtitle #{product.name}
                 p.itemp Category: #{product.category}
+                p.itemp Price: #{product.price}
+                p.itemp Location: #{product.location}
                 p.itemp Website: #{product.website}
                 a.btn.btn-primary.btn-sm(href="/show/#{product.name}") Details
                 a.btn.btn-primary.btn-sm(href="/edit/#{product.name}") Edit

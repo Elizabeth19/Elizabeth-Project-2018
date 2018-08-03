@@ -198,6 +198,8 @@ app.post('/add', function(req, res) {
     name: req.body.name,
     id: newId, // This is the variable created above
     category: req.body.category,
+    price: req.body.price,
+    location: req.body.location,
     website: req.body.website,
     image: req.body.image
   };
@@ -244,12 +246,14 @@ app.post('/edit/:name', function(req, res){
       var data = products;
       var index = data.map(function(product) {return product.name;}).indexOf(keyToFind)
       
-      var w = req.body.newname;
-      var x = req.body.newcategory;
+      var u = req.body.newname;
+      var v = req.body.newcategory;
+      var w = req.body.newprice;
+      var x = req.body.newlocation;
       var y = req.body.newwebsite;
       var z = req.body.newimage;
       
-      products.splice(index, 1 , {name: w, category: x, website: y, image: z} );
+      products.splice(index, 1 , {name: u, category: v, price: w, location: x, website: y, image: z} );
       
       json = JSON.stringify(products, null, 4);
       
@@ -307,7 +311,7 @@ app.get('/delete/:name', function(req, res){
   
   // log the position and the name of the product in the console
   
-  console.log("One to telete is " + keytoFind)
+  console.log("One to delete is " + keytoFind)
   
   products.splice(index2, 1); // This delets one product only from the location where the name occurs
   

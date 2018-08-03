@@ -2,30 +2,40 @@
     {
         "name": "Lets Go Summer Camp",
         "category": "Multi-Activity Camps",
+        "price": 95,
+        "location": "Athlone Community College",
         "website": "https://www.letsgo.ie/",
         "image": "letsgo.png"
     },
     {
         "name": "FAI Soccer Summer Schools",
         "category": "Sports Camps",
+        "price": 60,
+        "location": "Athlone Institute of Technology",
         "website": "https://camps.fai.ie/summer-soccer-schools/",
         "image": "fai_soccer.jpg"
     },
     {
         "name": "Kellogs GAA Cul Camps",
         "category": "Sports Camps",
+        "price": 60,
+        "location": "Athlone Institute of Technology",
         "website": "https://www.kelloggsculcamps.gaa.ie/",
         "image": "cul-camps.jpg"
     },
     {
         "name": "Athlone Regional Sports",
         "category": "Multi-Activity Camps",
+        "price": 80,
+        "location": "ARSC - Dublin Road",
         "website": "http://www.athlonersc.ie/kids/",
         "image": "img_arsc.jpg"
     },
     {
         "name": "AIT Sports Camps",
         "category": "Sports Camps",
+        "price": 65,
+        "location": "Athlone Institute of Technology",
         "website": "http://www.aitsport.ie/kids-camps-ait-sport/",
         "image": "ait_sports.jpg"
     },
@@ -33,6 +43,8 @@
         "name": "Baysports",
         "id": null,
         "category": "Multi-Activity Camps",
+        "price": 120,
+        "location": "Hodson Bay",
         "website": "https://www.baysports.ie/",
         "image": "baysports.jpg"
     },
@@ -40,13 +52,26 @@
         "name": "Shannon Dance Academy",
         "id": null,
         "category": "Performance Arts Camps",
+        "price": 95,
+        "location": "Monksland",
         "website": "http://www.shannondanceacademy.com/",
         "image": "ballet.jpg"
     },
     {
         "name": "Anyone4Science",
         "category": "Computer and STEM Camps",
+        "price": 125,
+        "location": "Athlone Institute of Technology",
         "website": "https://anyone4science.com/camps/summer-camps-2018/",
         "image": "anyone4science.jpg"
+    },
+    {
+        "name": "Sparkademy Lego Camp",
+        "id": null,
+        "category": "Computer and Stem Camps",
+        "price": 125,
+        "location": "Drum Community Centre",
+        "website": "https://sparkademy.ie/summer-camps-2018/",
+        "image": "sparkademy.png"
     }
 ]

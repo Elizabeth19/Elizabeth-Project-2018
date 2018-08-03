@@ -104,6 +104,18 @@ input[type=text], select {
   
 }
 
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  
+  
+}
+
 .formHold {
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.8);
